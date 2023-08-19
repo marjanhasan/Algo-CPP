@@ -28,6 +28,15 @@ int main()
         g[v].push_back(u);
     }
 
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "List " << i << ": ";
+        for (int j : g[i])
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
     vector<int> leaders;
 
     for (int i = 1; i <= n; i++)
