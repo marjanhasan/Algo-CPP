@@ -1,20 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 1e5 + 10;
+const int N = 1e3 + 10;
+vector<int> adj[N];
 vector<bool> visited(N, false);
-vector<int> g[N];
 
 void dfs(int u)
 {
     visited[u] = true;
-    for (int v : g[u])
+    for (auto v : adj[u])
     {
         if (visited[v])
             continue;
         dfs(v);
     }
 }
+
 int main()
 {
     int n, m;
@@ -22,40 +23,35 @@ int main()
 
     for (int i = 0; i < m; i++)
     {
-        int u, v;
-        cin >> u >> v;
-        g[u].push_back(v);
-        g[v].push_back(u);
+        int a, b;
+        cin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
 
-    for (int i = 1; i <= n; i++)
-    {
-        cout << "List " << i << ": ";
-        for (int j : g[i])
-        {
-            cout << j << " ";
-        }
-        cout << endl;
-    }
-    vector<int> leaders;
+    vector<int> l;
 
     for (int i = 1; i <= n; i++)
     {
         if (visited[i])
             continue;
-        leaders.push_back(i);
+        l.push_back(i);
         dfs(i);
     }
 
-    // to print all leaders
-    /* for (int l : leaders)
-        cout << l << " "; */
-
-    cout << leaders.size() - 1 << endl;
-
-    for (int i = 1; i < leaders.size(); i++)
+    cout << "Leaders: ";
+    for (auto v : l)
     {
-        cout << leaders[i - 1] << " " << leaders[i] << endl;
+        cout << v << " ";
+    }
+    cout << endl;
+
+    cout << "Needed Edges: " << l.size() - 1 << endl;
+
+    cout << "Printing Connections: " << endl;
+    for (int i = 1; i < l.size(); i++)
+    {
+        cout << l[i - 1] << " " << l[i] << endl;
     }
     return 0;
 }
