@@ -3,10 +3,9 @@ using namespace std;
 
 typedef pair<int, int> pii;
 const int N = 1e3 + 10;
-vector<string> g;
 int visited[N][N];
 int level[N][N];
-int n, m;
+int n;
 vector<pii> direc = {{1, 2}, {1, -2}, {-1, 2}, {-1, -2}, {2, 1}, {2, -1}, {-2, 1}, {-2, -1}};
 
 bool isValid(int i, int j)
