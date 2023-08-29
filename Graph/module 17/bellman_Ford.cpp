@@ -76,6 +76,7 @@ find the shortes path,
 using bellman ford algorithm.
 when the cost is negative and,
 might be in negative cycle.
+must be directed
 
 input:
 4 4

@@ -52,7 +52,7 @@ int main()
         for (int j = 1; j <= n; j++)
         {
             if (dis[i][j] == INF)
-                cout << "INF"
+                cout << "N"
                      << " ";
             else
                 cout << dis[i][j] << " ";
@@ -61,3 +61,18 @@ int main()
     }
     return 0;
 }
+
+/*
+input:
+4 6
+1 2 3
+2 1 2
+1 4 5
+4 3 2
+3 2 1
+2 4 4
+
+output:
+
+
+ */
