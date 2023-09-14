@@ -54,5 +54,12 @@ int main()
     cout << ans << endl;
     return 0;
 }
-/* ckkgcd
-kxgxcyd */
+/*
+input:
+ckkgcd
+kxgxcyd
+
+output:
+ckkxgxcyd
+
+ */

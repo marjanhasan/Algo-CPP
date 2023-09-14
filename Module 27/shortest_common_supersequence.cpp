@@ -23,3 +23,30 @@ int main()
     cout << n + m - dp[n][m];
     return 0;
 }
+/*
+input:
+peek
+eke
+
+output:
+5
+
+input:
+ckkgcd
+kxgxcyd
+
+output:
+9
+
+context:
+2 ta string thakbe,
+jsb character gula common thakbe taderk ber krte hbe(lcs),
+2 ta string thk character common jdi hoy 4 ta that means
+total 8 ta character.
+amdr kaj jegula mile nai segula + ei 4 ta milay akta notun string banano,
+baad porbe 4 ta krn tara common chilo.
+
+tai formula hoilo A string er size + B string er size - lcs;
+
+
+*/
